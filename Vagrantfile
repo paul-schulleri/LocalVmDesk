@@ -15,6 +15,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "box-cutter/ubuntu1404-desktop"
 
 
+  config.vm.provision :shell, :path => "provision/bootstrap.sh"
+  #config.vm.provision :shell, :path => "provision/vhosts.sh"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -44,7 +46,8 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
-  config.vm.synced_folder "U:\\Share", "/devel/Schulleri", id: "web-root", nfs: true
+   config.vm.synced_folder "U:\\Share", "/Share/Documents", id: "web-root", nfs: true
+   config.vm.synced_folder "U:\\Development", "/Documents/Development", id: "web-root", nfs: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
