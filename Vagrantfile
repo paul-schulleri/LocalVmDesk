@@ -47,7 +47,7 @@ Vagrant.configure(2) do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
 
    config.vm.synced_folder "U:\\Share", "/Share/Documents", id: "web-root", nfs: true
-   config.vm.synced_folder "U:\\Development", "/Documents/Development", id: "web-root", nfs: true
+   config.vm.synced_folder "U:\\Development", "/Share/Development", id: "web-root", nfs: true
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
